@@ -434,6 +434,20 @@ angular
         "$$hashKey": "02U"
       }
     ];
+
+    function locationFixer(arr) {
+      for (var i = 0; i < arr.length; i++) {
+        if (!arr[i].current_location) {
+          arr[i].current_location = {
+            name:''
+          };
+        }
+      }
+      return arr;
+    }
+
+    locationFixer($scope.friends);
+
     $scope.searchTerm = [];
 
     var sortAttr = {};
