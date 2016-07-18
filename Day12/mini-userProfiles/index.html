@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="userProfiles">
+<head>
+    <meta charset="utf-8">
+    <title>mini-userProfiles</title>
+    <link rel="stylesheet" href="styles.css"></link>
+</head>
+<body ng-controller="MainController">
+
+    <div ng-repeat="user in users" ng-click="toggleFavorite($index)" ng-class="{favorite: user.isFavorite}">
+    	<img ng-src="{{ user.avatar }}">
+    	<h3>{{ user.first_name }} {{ user.last_name }}</h3>
+    </div>
+
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+     <script src="app.js"></script>
+     <script src="controller.js"></script>
+     <script type="text/javascript" src="dataService.js"></script>
+</body>
+</html>
