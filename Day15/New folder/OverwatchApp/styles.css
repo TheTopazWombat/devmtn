@@ -1,0 +1,20 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+.profile{
+  /*float:left;*/
+}
+
+.stat-list {
+  list-style: none;
+}
+
+.heroStats {
+  /*float:right;*/
+}
+
+.hero-img {
+  max-width: 250px;
+  max-height: 250px;
+  float:left;
+}

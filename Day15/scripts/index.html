@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app='notesApp'>
+  <head>
+    <meta charset="utf-8">
+    <link  href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="styles/base.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="styles/styles.css" media="screen" title="no title" charset="utf-8">
+    <title>Notes</title>
+  </head>
+  <body ng-controller="MainCtrl">
+
+
+    <input type="text" ng-model="note.title" placeholder="Title">
+    <input type="text" ng-model="note.content" placeholder="Content">
+    <button ng-click="saveNote(note)">Add Note</button></<form action="">
+
+      <ul>
+        <li ng-repeat="note in notes">
+          <a href="#">
+            <h2>{{note.title}}</h2>
+            <p>{{note.content}}</p>
+          </a>
+        </li>
+      </ul>
+
+
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/MainCtrl.js"></script>
+  <script src="scripts/services/noteService.js"></script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="reset.css"></link>
+    <link rel="stylesheet" href="styles.css"></link>
+    <title>Overwatch Stats</title>
+  </head>
+  <body ng-controller="ctrl" ng-cloak>
+
+    <input type="text" ng-model="playerNameSearch" placeholder = "Player Name">
+    <br>
+    <input type="text" ng-model="playerIdSearch" placeholder = "Player ID Number">
+    <button ng-click="getPlayerStats(playerNameSearch, playerIdSearch)">Submit</button>
+    <section class="playerInfo" ng-cloak>
+      <div class="profile" ng-cloak>
+        <h1 class="nameHeader">{{playerStats.username}}</h1>
+        <img src="{{playerStats.avatar}}" alt="" class="avatar">
+        <ul ng-hide="hideVal">
+          <li class="stat-list">Wins: {{playerStats.wins}}</li>
+          <li class="stat-list">Losses: {{playerStats.losses}}</li>
+          <li class="stat-list">Winrate: {{playerStats.winrate}}</li>
+        </ul>
+      </div>
+      <div class="heroStats">
+        <select type="text" ng-model="heroSearch" placeholder="Search for Hero">
+          <option value="Bastion">Bastion</option>
+          <option value="DVa">D.Va</option>
+          <option value="Genji">Genji</option>
+          <option value="Hanzo">Hanzo</option>
+          <option value="Junkrat">Junkrat</option>
+          <option value="Lucio">Lucio</option>
+          <option value="McCree">McCree</option>
+          <option value="Mei">Mei</option>
+          <option value="Mercy">Mercy</option>
+          <option value="Pharah">Pharah</option>
+          <option value="Reaper">Reaper</option>
+          <option value="Reinhardt">Reinhardt</option>
+          <option value="Roadhog">Roadhog</option>
+          <option value="Soldier 76">Soldier</option>
+          <option value="Symmetra">Symmetra</option>
+          <option value="Torbjoern">Torbjorn</option>
+          <option value="Tracer">Tracer</option>
+          <option value="Widowmaker">Widowmaker</option>
+          <option value="Winston">Winston</option>
+          <option value="Zarya">Zarya</option>
+          <option value="Zenyatta">Zenyatta</option>
+        </select>
+        <button ng-click="getHeroStats(heroSearch)">Submit</button>
+        <div ng-model="heroStats" ng-cloak>
+          <img src="./img/{{heroSearch}}.png" alt="" class="hero-img" ng-hide="hideValTwo">
+          <ul ng-hide="hideValTwo">
+            <li class="stat-list">Win Rate: {{heroData.winRate}}</li>
+            <li class="stat-list">Weapon Accuracy: {{heroData.accuracy}}</li>
+            <li class="stat-list">Time Played: {{heroData.timePlayed}}</li>
+            <li class="stat-list">Average Eliminations: {{heroData.avgElim}}</li>
+            <li class="stat-list">Career-best Eliminations: {{heroData.highScoreElim}}</li>
+            <li class="stat-list">Average Damage: {{heroData.avgDmg}}</li>
+            <li class="stat-list">Career-best Damage: {{heroData.highScoreDmg}}</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <script src="app.js" charset="utf-8"></script>
+    <script src="service.js" charset="utf-8"></script>
+    <script src="controller.js" charset="utf-8"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<html ng-app="apiApp">
+	<body ng-controller='apiController'>
+
+		<input type="text" ng-module="searchText">
+
+		<div ng-model="myData">
+			<div ng-repeat='data in myData'>
+				<h1>{{data.name}}</h1>
+				<p>{{data.gender}}</p>
+				<p></p>
+			</div>
+
+		</div>
+
+				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+		<script src="app.js"></script>
+		<script src="controller.js"></script>
+		<script src="service.js"></script>
+	</body>
+</html>
