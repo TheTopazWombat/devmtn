@@ -1,0 +1,30 @@
+.parllax-container {
+  position: relative;
+  height:640px;
+  width: 100%;
+  background-image: "img/background.jpg"
+
+
+}
+
+.left-branch{
+  position: absolute;
+  z-index: 999;
+
+
+}
+
+.rght-branch {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+
+}
+
+.lorem {
+
+}
+
+.vader {
+  position: absolute;
+}
