@@ -1,0 +1,127 @@
+@media only screen and (max-width: 1000px) {
+
+ body {
+     width:100%;
+     margin-left:0%;
+     margin-right:0%;
+     padding:0px; 
+     height:100vh;
+ }
+ /*NAV  BAR*/
+ 
+     /*----------MAIN PAGE -----------*/
+ .myHead{
+     height:150px;
+   
+     
+ }
+  .myHead p {
+     font-size:60px;
+     line-height: 150px;  
+     margin-left:-8%;
+     margin-right:3%;  
+ }
+ .dojo {
+     height:100px;
+     width: 120px;
+     margin-left:-10%;
+     margin-top:0%;
+ }
+ 
+ 
+ .mainDiv{
+     width:90%;
+     margin-left:5%;
+     margin-right:2.5%;
+ }
+ .switch {
+     width:100%;
+ }
+ 
+ .info {
+     font-size:30px;
+     line-height: 1.2em;
+     margin-left: 10%;
+     margin-right: 10%;
+ }
+ 
+ 
+.icons {
+    height: 200px;
+    width: 200px;
+    margin-bottom: 10%;
+    margin-top:10%;
+}
+  
+  /*----------Forumla ONE -----------*/
+  
+  .topHolder {
+      margin-left:10%;
+      margin-right:7%;
+  }
+  
+   /*----------BasketBall -----------*/ 
+  .inputer input {
+      width: 15%;
+      height:30px;
+      background-color:#e6e6e6;
+      font-size:20px;
+       font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+     font-size:20px;
+     margin-left:2%;
+     margin-right:2%;
+  }
+  ::-webkit-input-placeholder {
+   color: #6699ef;
+   text-align: center;
+}
+
+.inputer button {
+    height:20px;
+    width:20%;
+   background-color:transparent;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #6699ff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+    background-color: #6699FF;
+    margin-top: 3%;
+     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+     font-size:20px;
+     padding-bottom:60px;
+}
+
+
+.editInput input {
+       width: 15%;
+      height:30px;
+      background-color:#e6e6e6;
+      font-size:20px;
+       font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+     font-size:20px;
+     margin-left:2%;
+     margin-right:2%;
+}
+
+
+   /*----------BasketBall -----------*/ 
+   
+   .todoTop{
+       width:95%;
+   }
+
+
+
+.nav-toggle {
+    margin-top:3%;
+}
+    
+}

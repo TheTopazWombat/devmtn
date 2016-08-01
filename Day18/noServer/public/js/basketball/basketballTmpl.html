@@ -1,0 +1,81 @@
+<section class="round-border">
+	<div>
+		<button href="#collapse1" class="nav-toggle">Description</button>
+	</div>
+	<div id="collapse1" style="display:none">
+		<p class="info"> Ball So Hard University is an app I made to use CRUD opperations with Firebase. All the data can be found at https://basketballplayers.firebaseio.com</p>
+	</div>
+</section>
+
+
+
+
+
+
+<h1> Ball So Hard University </h1>
+
+ <div class="inputer">
+   <input type='text' ng-model='newPlayer.name' placeholder='Players Name'>
+   <input type='text' ng-model='newPlayer.team' placeholder='Players Team'>
+   <input type='text' ng-model='newPlayer.age' placeholder='Players Age'>
+   <input type='text' ng-model='newPlayer.salary' placeholder='Players Salary'>
+
+   <button ng-click ='createNewPlayer(newPlayer)'>Create Baller</button>
+   </div>
+   
+   
+  
+
+<div ng-repeat='person in players'>
+     <table>
+  <thead>
+    <tr>
+      <th>Name:</th>
+      <th>Team:</th>
+      <th>Age:</th>
+      <th>Salary:</th>
+      <th>View EM: </th>
+    </tr>
+  </thead>
+  <tbody>
+       <tr>
+      <td><strong>{{person.name}}</strong></td>
+      <td>{{person.team}}</td>
+      <td>{{person.age}}</td>
+      <td>{{person.salary}}</td>
+      <td> <a ui-sref="player({playerID:person.$id})">Edit/Delete Baller</a> </td>
+    </tr>
+ </tbody>
+</table>
+
+  
+
+  
+  
+</div>
+
+
+<script>
+		$(document).ready(function() {
+		  $('.nav-toggle').click(function(){
+			//get collapse content selector
+			var collapse_content_selector = $(this).attr('href');					
+					
+			//make the collapse content to be shown or hide
+			var toggle_switch = $(this);
+			$(collapse_content_selector).toggle(function(){
+			  if($(this).css('display')=='none'){
+                                //change the button label to be 'Show'
+				toggle_switch.html('Description');
+			  }else{
+                                //change the button label to be 'Hide'
+				toggle_switch.html('Remove');
+			  }
+			});
+		  });
+				
+		});	
+		</script>
+
+
+  

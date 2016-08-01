@@ -1,0 +1,59 @@
+ <section class="round-border">
+	<div>
+		<button href="#collapse1" class="nav-toggle">Description</button>
+	</div>
+	<div id="collapse1" style="display:none">
+		 <p class ="info"> I wanted to make a simple photo slider for two different reasons. One, so I could replicate and use it on other projects when it called for it. Two, sometimes you need to just look at cat photos to stay sane.</p>
+ 
+	</div>
+</section>
+
+ 
+ 
+ <div class="container slider">
+ 
+        <!-- enumerate all photos -->
+        <img ng-repeat="photo in photos" class="slide" ng-swipe-right="showPrev()" ng-swipe-left="showNext()" ng-show="isActive($index)" ng-src="{{photo.src}}" />
+ 
+        <!-- prev / next controls -->
+        <a class="arrow prev" href="#" ng-click="showPrev()"></a>
+
+        <a class="arrow next" href="#" ng-click="showNext()"></a>
+ 
+        <!-- extra navigation controls -->
+
+        <ul class="nav">
+
+            <li ng-repeat="photo in photos" ng-class="{'active':isActive($index)}">
+
+                <img src="{{photo.src}}" ng-click="showPhoto($index);" />
+
+            </li>
+
+        </ul>
+
+ 
+
+    </div>
+
+<script>
+		$(document).ready(function() {
+		  $('.nav-toggle').click(function(){
+			//get collapse content selector
+			var collapse_content_selector = $(this).attr('href');					
+					
+			//make the collapse content to be shown or hide
+			var toggle_switch = $(this);
+			$(collapse_content_selector).toggle(function(){
+			  if($(this).css('display')=='none'){
+                                //change the button label to be 'Show'
+				toggle_switch.html('Description');
+			  }else{
+                                //change the button label to be 'Hide'
+				toggle_switch.html('Remove');
+			  }
+			});
+		  });
+				
+		});	
+		</script>

@@ -1,0 +1,61 @@
+<section class="round-border">
+	<div>
+		<button href="#collapse1" class="nav-toggle">Description</button>
+	</div>
+	<div id="collapse1" style="display:none">
+		<p class="info">I feel like everyone and their mom has you make some version of a todo list when you are learning to code so this is my version. I created a todo list that acts as a decision maker. Input the things you can't decide between and click decide, which will randomly selects one of the items in the list. If you want to remove an item check the checkbox and click remove. </p>
+	</div>
+</section>
+
+
+<div class='todoTop'>
+    <h1>Decision Maker</h1>
+    
+<form name='frm' ng-submit='addTodo()' >
+    <input class='todoInput' type='text' name='newTodo' maxlength="20" ng-model='newTodo' placeholder =' Make A Choice' required /> 
+        <button class='goBtn' ng-disabled="frm.$invalid"> Add To List </button>
+</form>
+
+                <!--Randomizer-->
+<button class ='whatUp' ng-click= 'randomEvent()'> Decide</button>
+ <button class='clearBtn' ng-click='clearCompleted()'> Remove     </button>
+    <div class="whatsUp" ng-model= "answers">{{ randomTodo }} </div>
+    
+
+ 
+    <!--LIST -->
+ <div class="listWrap">   
+   <ul>
+     <li class='myList'' ng-repeat = 'todo in todos'> 
+       <input type='checkBox' ng-model='todo.done'/>
+        <span class='textInTodo' ng-class="{'done': todo.done}">{{todo.title}}</br>
+        </span>
+      </li>
+   </ul>
+</div>
+
+</div>  <!--TODOTOP -->
+    
+    
+<script>
+		$(document).ready(function() {
+		  $('.nav-toggle').click(function(){
+			//get collapse content selector
+			var collapse_content_selector = $(this).attr('href');					
+					
+			//make the collapse content to be shown or hide
+			var toggle_switch = $(this);
+			$(collapse_content_selector).toggle(function(){
+			  if($(this).css('display')=='none'){
+                                //change the button label to be 'Show'
+				toggle_switch.html('Description');
+			  }else{
+                                //change the button label to be 'Hide'
+				toggle_switch.html('Remove');
+			  }
+			});
+		  });
+				
+		});	
+		</script>
+    

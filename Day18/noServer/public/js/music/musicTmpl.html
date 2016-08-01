@@ -1,0 +1,67 @@
+<section class="round-border">
+	<div>
+		<button href="#collapse1" class="nav-toggle">Description</button>
+	</div>
+	<div id="collapse1" style="display:none">
+		    <p class="info"> This is a simple API call that I made that retrieves a JSON file. The end point I am hitting is <a>https://ergast.com/api/f1/2013/driverStandings.json?callback=JSON_CALLBACK</a>. I wanted to understand how to display information in tables in a way that was visually appealing to myself.  </p> 
+	</div>
+</section>
+
+
+
+
+
+<div class="formOne">
+  <div class="topHolder"> 
+     <img class ="musicHead" src ="https://upload.wikimedia.org/wikipedia/en/thumb/4/45/F1_logo.svg/800px-F1_logo.svg.png"/> 
+     <h1> 2013 F1 RESULTS </h1>
+  </div> 
+    <br> </br>
+  
+<input class="formInput" type="text" ng-model="nameFilter" placeholder="Search 2013 Championship"/>
+<table>
+    <thead>
+      <tr>
+          <th>POS </th>
+          <th>Name</th>
+          <th>Team</th>
+          <th>Points</th>
+      </tr>
+      
+    </thead>
+    <tbody>
+      <tr ng-repeat="driver in driversList| filter: nameFilter">
+        <td>{{$index + 1}}</td>
+        <td>
+          
+          {{driver.Driver.givenName}}&nbsp;{{driver.Driver.familyName}}
+        </td>
+        <td>{{driver.Constructors[0].name}}</td>
+        <td>{{driver.points}}</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</div>
+
+<script>
+		$(document).ready(function() {
+		  $('.nav-toggle').click(function(){
+			//get collapse content selector
+			var collapse_content_selector = $(this).attr('href');					
+					
+			//make the collapse content to be shown or hide
+			var toggle_switch = $(this);
+			$(collapse_content_selector).toggle(function(){
+			  if($(this).css('display')=='none'){
+                                //change the button label to be 'Show'
+				toggle_switch.html('Description');
+			  }else{
+                                //change the button label to be 'Hide'
+				toggle_switch.html('Remove');
+			  }
+			});
+		  });
+				
+		});	
+		</script>
